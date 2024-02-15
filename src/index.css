@@ -153,6 +153,7 @@ body {
 
 .footer {
   font-size: 1.4rem;
+  position: relative;
 }
 
 .order {
@@ -180,7 +181,7 @@ body {
 
 .clock {
   position: absolute;
-  bottom: 3rem;
+  bottom: -50px;
   left: 50%;
   transform: translateX(-50%);
 }
