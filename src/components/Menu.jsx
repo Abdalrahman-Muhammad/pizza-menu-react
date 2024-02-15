@@ -1,5 +1,6 @@
 import Pizza from './Pizza';
 import { pizzaData } from '../../public/data';
+// const pizzaData = [];
 const Menu = () => {
   return (
     <main className='menu'>
@@ -8,11 +9,15 @@ const Menu = () => {
         Authentic Italian cuisine. 6 creative dishes to choose from. All from
         our stone oven, all organic, all delicious.
       </p>
-      <ul className='pizzas'>
-        {pizzaData.map((pizza, i) => (
-          <Pizza key={i} pizzaObj={pizza} />
-        ))}
-      </ul>
+      {pizzaData.length > 0 ? (
+        <ul className='pizzas'>
+          {pizzaData.map((pizza, i) => (
+            <Pizza key={i} pizzaObj={pizza} />
+          ))}
+        </ul>
+      ) : (
+        <p>We &lsquo;re still working on our menu. Please comeback later</p>
+      )}
     </main>
   );
 };

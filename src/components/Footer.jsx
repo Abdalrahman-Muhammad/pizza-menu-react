@@ -15,10 +15,24 @@ const Footer = () => {
 
   const openHour = 12;
   const closedHour = 22;
-  const isClosed = hour >= closedHour || hour <= openHour;
+  const isOpen = hour >= openHour && hour <= closedHour;
   return (
     <footer className='footer'>
-      {time}. We &apos;re currently {isClosed ? 'Close' : 'open'}
+      {isOpen ? (
+        <div className='order'>
+          <p>
+            We &lsquo;re open untill {closedHour}:00. Come visit us or order
+            online.
+          </p>
+          <button className='btn'>Order</button>
+        </div>
+      ) : (
+        <p>
+          We &lsquo;re happy to welcome you between {openHour}:00 and{' '}
+          {closedHour}:00.
+        </p>
+      )}
+      <p>{time}</p>
     </footer>
   );
   // return React.createElement('footer', null, "We 're currently open!");
