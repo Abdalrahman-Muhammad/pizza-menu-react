@@ -1,6 +1,7 @@
 const Pizza = ({
   pizzaObj: { name, photoName, price, soldOut, ingredients },
 }) => {
+  if (soldOut) return null;
   return (
     <li className='pizza'>
       <img src={photoName} alt={name} />

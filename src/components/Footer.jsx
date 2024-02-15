@@ -19,23 +19,28 @@ const Footer = () => {
   return (
     <footer className='footer'>
       {isOpen ? (
-        <div className='order'>
-          <p>
-            We &lsquo;re open untill {closedHour}:00. Come visit us or order
-            online.
-          </p>
-          <button className='btn'>Order</button>
-        </div>
+        <Order closedHour={closedHour} />
       ) : (
         <p>
           We &lsquo;re happy to welcome you between {openHour}:00 and{' '}
           {closedHour}:00.
         </p>
       )}
-      <p>{time}</p>
+      <p className='clock'>{time}</p>
     </footer>
   );
   // return React.createElement('footer', null, "We 're currently open!");
+};
+
+const Order = ({ closedHour }) => {
+  return (
+    <div className='order'>
+      <p>
+        We &lsquo;re open untill {closedHour}:00. Come visit us or order online.
+      </p>
+      <button className='btn'>Order</button>
+    </div>
+  );
 };
 
 export default Footer;
